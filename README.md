@@ -40,7 +40,7 @@ $ exit
 $ exit
 ```
 
-### How to check cpplint and cppcheck
+### How to run cpplint and cppcheck
 Use the below commands to run cppcheck and cpplint.
 ```
 $ cd ~/catkin_ws/src/turtlebot_walker
@@ -50,12 +50,12 @@ $ cpplint $( find . -name \*.hpp -or -name \*.cpp | grep -vE -e "^./results" )
 ### How to run and interact with program
 In a new terminal
 ```
-$ roslaunch roslaunch turtlebot_walker turtlebot_walker.launch
+$ roslaunch turtlebot_walker turtlebot_walker.launch
 ```
 Gazebo will open with the custom world and turtlebot simulation.
 
 #### Data recording by rosbag
-The launch file also has a tag to initiate data recording of all the topics (except for /camera* topics) in a bag file "BagData". By default this functionality is kept "ON", which will save a new .bag file (or replace any existing file with same name) in /results directory, eaach tiime the launch file is executed. User has the option to disable the recording of data by passing an argument set to 0 as below while running the launch file.
+The launch file also has a tag to initiate data recording of all the topics (except for /camera* topics) in a bag file "BagData". By default this functionality is kept "ON", which will save a new .bag file (or replace any existing file with same name) in /results directory, each tiime the launch file is executed. User has the option to disable the recording of data by passing an argument set to 0 as below while running the launch file.
 
 ```
 $ roslaunch turtlebot_walker turtlebot_walker.launch record_data:=0
@@ -68,7 +68,7 @@ In a new terminal
 $ cd ~/catkin_ws/src/turtlebot_walker/results
 $ rosbag info BagData.bag
 ```
-output will be something similar to as shown below. You may notice that the date and the time stamp are not as per system clokc, this is because of gazebo.
+Output will be something similar to as shown below. You may notice that the date and the time stamps are not as per the system clock, this is because of gazebo.
 ```
 path:        BagData.bag
 version:     2.0
