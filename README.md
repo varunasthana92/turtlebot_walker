@@ -1,4 +1,4 @@
-# ROS package: beginner_tutorials
+# ROS package: turtlebot_walker
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ---
 
