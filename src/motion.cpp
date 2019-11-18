@@ -74,7 +74,7 @@ int Motion::collisionStatus() {
    * by parsing over the range data
    */
   for (auto i : data.ranges) {
-    if (i < 0.6) {
+    if (i < 1) {
       /*
        * @brief if found closer than 0.6 units, then forward is set to 0
        */
