@@ -83,6 +83,8 @@ class Motion {
   int rotateBot();
   /*
    * @brief function to check if turtlebot is in close vicinity to any obstacle
+   * Based on the status, function toggels the value of clsss member forward
+   * between 0 and 1
    */
   int collisionStatus();
 };
