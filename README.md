@@ -5,6 +5,15 @@
 ## Overview
 This ROS package "turtlebot_walker" outlines the usage of ros functionalities with the gazebo simulator. A custom world has been setup in gazebo to provide a confined space with various obstacles. A turtlebot is then spawned into this environment with a laser scnaner on it. The scan data is used to check if the way ahead of turtlebot is clear of any obstacle or not. If no nearby obstacle is found, then the turtlebot moves forward, or else it stops and rotates untill the way is clear.
 
+<p align="center">
+<img src="https://github.com/varunasthana92/turtlebot_walker/blob/master/additional_files/bot_behaviour1.png">
+</p>
+
+Turtlebot was approaching the shperical object on the left. It was detected by the sensor and course correction is done. 
+<p align="center">
+<img src="https://github.com/varunasthana92/turtlebot_walker/blob/master/additional_files/bot_behaviour2.png">
+</p>
+
 ### Dependencies
 ```
 ROS Kinetic
