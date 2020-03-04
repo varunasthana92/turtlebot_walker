@@ -30,7 +30,6 @@ To run the package-
 ```
 $ sudo apt-get install ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers
 ```
-4) Default forder for Gazebo's World Files is known to user. (World files are located in a versioned system directory, for example /usr/share/gazebo-7 on Ubuntu. Fodler name may vary with the version of Gazebo)
 ### How to build the program
 Clone the package in the catkin_ws/src directory
 ```
@@ -39,14 +38,6 @@ $ git clone https://github.com/varunasthana92/turtlebot_walker.git
 $ cd ..
 $ catkin_make
 ```
-Copy the file world/obstacle.world, provided in the repository, into the gazebo's default folder for World Files (as higlighed in the Assumptions section). You may require admin access to copy the file. An example of the command to copy the file is provided below, but it may change based on the final destination folder. (You will be asked to enter password after $ sudo command)
-
-```
-$ cd ~/catkin_ws/src/turtlebot_walker/world
-$ sudo cp obstacle.world /usr/share/gazebo-7/worlds
-$ exit
-```
-
 ### How to run cpplint and cppcheck
 Use the below commands to run cppcheck and cpplint.
 ```
@@ -55,8 +46,9 @@ $ cppcheck $( find . -name \*.hpp -or -name \*.cpp | grep -vE -e "^./results" )
 $ cpplint $( find . -name \*.hpp -or -name \*.cpp | grep -vE -e "^./results" )
 ```
 ### How to run and interact with program
-In a new terminal
+In a new terminal, in your catkin workspace.
 ```
+$ source devel/setup.bash
 $ roslaunch turtlebot_walker turtlebot_walker.launch
 ```
 Gazebo will open with the custom world and turtlebot simulation.
@@ -64,7 +56,10 @@ Gazebo will open with the custom world and turtlebot simulation.
 #### Data recording by rosbag
 The launch file also has a tag to initiate data recording of all the topics (except for /camera* topics) in a bag file "BagData". By default this functionality is kept "ON", which will save a new .bag file (or replace any existing file with same name) in /results directory, each time the launch file is executed. User has the option to disable the recording of data by passing an argument set to 0 as below while running the launch file.
 
+
+In a new terminal, in your catkin workspace.
 ```
+$ source devel/setup.bash
 $ roslaunch turtlebot_walker turtlebot_walker.launch record_data:=0
 ```
 #### Inspecting and playing back the rosbag file
